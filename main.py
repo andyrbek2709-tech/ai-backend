@@ -45,3 +45,8 @@ async def generate_backend(prompt: dict):
         "id": project_id,
         "code": code
     }
+    
+    @app.get("/project/{id}")
+def get_project(id: str):
+    data = supabase.table("projects").select("*").eq("id", id).execute()
+    return data.data
