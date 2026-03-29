@@ -1,10 +1,19 @@
 from fastapi import FastAPI
 from openai import OpenAI
+from supabase import create_client
 import os
+import uuid
 
 app = FastAPI()
 
+# OpenAI
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+# Supabase
+supabase = create_client(
+    os.getenv("SUPABASE_URL"),
+    os.getenv("SUPABASE_KEY")
+)
 
 @app.get("/")
 def root():
@@ -22,4 +31,17 @@ async def generate_backend(prompt: dict):
         ]
     )
 
-    return {"code": response.choices[0].message.content}
+    code = response.choices[0].message.content
+
+    # сохраняем в базу
+    project_id = str(uuid.uuid4())
+    supabase.table("projects").insert({
+        "id": project_id,
+        "name": user_input,
+        "content": code
+    }).execute()
+
+    return {
+        "id": project_id,
+        "code": code
+    }
