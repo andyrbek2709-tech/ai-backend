@@ -34,7 +34,6 @@ async def generate_backend(prompt: dict):
 
     code = response.choices[0].message.content
 
-    # сохраняем в базу
     project_id = str(uuid.uuid4())
     supabase.table("projects").insert({
         "id": project_id,
@@ -51,4 +50,10 @@ async def generate_backend(prompt: dict):
 @app.get("/project/{id}")
 def get_project(id: str):
     data = supabase.table("projects").select("*").eq("id", id).execute()
+    return data.data
+
+
+@app.get("/projects")
+def get_projects():
+    data = supabase.table("projects").select("*").execute()
     return data.data
