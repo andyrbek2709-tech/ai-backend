@@ -19,6 +19,7 @@ supabase = create_client(
 def root():
     return {"status": "ok"}
 
+
 @app.post("/generate-backend")
 async def generate_backend(prompt: dict):
     user_input = prompt.get("text")
@@ -45,8 +46,9 @@ async def generate_backend(prompt: dict):
         "id": project_id,
         "code": code
     }
-    
-    @app.get("/project/{id}")
+
+
+@app.get("/project/{id}")
 def get_project(id: str):
     data = supabase.table("projects").select("*").eq("id", id).execute()
     return data.data
