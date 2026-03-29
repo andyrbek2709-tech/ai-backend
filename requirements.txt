@@ -1,4 +1,4 @@
 fastapi
 uvicorn
 openai
-supabase
+supabase-py
