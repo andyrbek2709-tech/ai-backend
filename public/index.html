@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Боулинг Центр «Страйк»</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header {
+    background: #d32f2f;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    box-shadow: 0 3px 8px rgba(211,47,47,0.5);
+  }
+  main {
+    flex: 1;
+    padding: 2rem 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  h1, h2 {
+    color: #ffeb3b;
+    text-align: center;
+    margin-bottom: 0.5em;
+    text-shadow: 0 0 6px #ffeb3b99;
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  .intro {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .lanes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 1.5rem;
+  }
+  .lane {
+    background: #222;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: inset 0 0 10px #b71c1c;
+    text-align: center;
+  }
+  .lane img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 0 10px #d32f2fbb;
+  }
+  .lane h3 {
+    margin: 0.3rem 0 0.5rem;
+    color: #f44336;
+  }
+  .lane p {
+    font-size: 0.9rem;
+    color: #eee;
+  }
+  .booking {
+    background: #b71c1c;
+    padding: 1rem;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px #b71c1c;
+  }
+  .booking h2 {
+    margin-top: 0;
+    color: #fffde7;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  label {
+    font-weight: 600;
+  }
+  input, select, button {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+  }
+  input, select {
+    background: #fff;
+    color: #121212;
+  }
+  button {
+    background: #ffeb3b;
+    color: #121212;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  button:hover, button:focus {
+    background: #fdd835;
+    outline: none;
+  }
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #1b1b1b;
+    color: #777;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+<header>Боулинг Центр «Страйк»</header>
+<main>
+  <section class="intro">
+    <h1>Добро пожаловать в мир страйков и спэров!</h1>
+    <p>Наш современный боулинг-центр предлагает отличные дорожки, атмосферу и сервис для незабываемого отдыха с семьёй, друзьями и коллегами.</p>
+  </section>
+  <section>
+    <h2>Наши дорожки</h2>
+    <div class="lanes">
+      <article class="lane">
+        <img src="https://images.unsplash.com/photo-1590080877777-6a8ca7d9d096?auto=format&fit=crop&w=600&q=80" alt="Дорожка с кеглями и шаром">
+        <h3>Стандартные дорожки</h3>
+        <p>10 великолепных дорожек для классического боулинга, оборудованных современным электронным счётом и комфортными сидениями.</p>
+      </article>
+      <article class="lane">
+        <img src="https://images.unsplash.com/photo-1530629013299-6cb8383c1ff1?auto=format&fit=crop&w=600&q=80" alt="Яркая дорожка с подсветкой">
+        <h3>Праздничные дорожки</h3>
+        <p>Яркая неоновая подсветка, музыка и спецэффекты создадут атмосферу настоящего праздника и веселья.</p>
+      </article>
+      <article class="lane">
+        <img src="https://images.unsplash.com/photo-1540206395-68808572332f?auto=format&fit=crop&w=600&q=80" alt="Детская зона боулинга">
+        <h3>Детская игровая зона</h3>
+        <p>Специальные дорожки для самых маленьких игроков: облегчённые шары и защитные бортики для безопасности и удовольствия.</p>
+      </article>
+    </div>
+  </section>
+  <section class="booking">
+    <h2>Забронируйте дорожку</h2>
+    <form action="#" method="post" autocomplete="off">
+      <label for="name">Ваше имя</label>
+      <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" name="phone" required placeholder="+7 999 123-45-67" pattern="\+7\s?\d{3}\s?\d{3}-?\d{2}-?\d{2}">
+      <label for="date">Дата</label>
+      <input type="date" id="date" name="date" required min="">
+      <label for="time">Время</label>
+      <select id="time" name="time" required>
+        <option disabled selected value="">Выберите время</option>
+        <option>12:00</option>
+        <option>14:00</option>
+        <option>16:00</option>
+        <option>18:00</option>
+        <option>20:00</option>
+        <option>22:00</option>
+      </select>
+      <label for="lane">Выберите дорожку</label>
+      <select id="lane" name="lane" required>
+        <option disabled selected value="">--</option>
+        <option>Стандартная</option>
+        <option>Праздничная</option>
+        <option>Детская</option>
+      </select>
+      <button type="submit">Забронировать</button>
+    </form>
+  </section>
+</main>
+<footer>© 2024 Боулинг Центр «Страйк». Все права защищены.</footer>
+<script>
+  // Установим минимальную дату на сегодня в input[type=date]
+  const dateInput = document.getElementById('date');
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.setAttribute('min', today);
+</script>
+</body>
+</html>
