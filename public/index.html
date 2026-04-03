@@ -1,127 +1,174 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Боулинг-клуб «StrikeZone»</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Боулинг-Клуб "Страйк" — Главная</title>
 <style>
   body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #1a1a1a;
-    color: #f3f3f3;
+    background: #121212;
+    color: #f0f0f0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
   }
   header {
-    background: #d32f2f;
+    background: #bf360c;
     padding: 1rem 2rem;
     text-align: center;
-    font-size: 2rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+  }
+  header h1 {
+    margin: 0;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 0.05em;
+    font-size: 2.4rem;
     text-transform: uppercase;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+  }
+  nav {
+    background: #4e342e;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.8rem 0;
+  }
+  nav a {
+    color: #fff3e0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #ffcc80;
   }
   main {
     flex-grow: 1;
-    max-width: 1080px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 2rem 1rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
-  h1, h2 {
-    color: #ffeb3b;
-    text-align: center;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 6px #ffeb3bcc;
-  }
-  p {
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto 2rem auto;
-    text-align: center;
-  }
-  .features {
+  .hero {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    margin-bottom: 3rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
   }
-  .feature {
-    background: #2e2e2e;
-    border-radius: 12px;
-    padding: 1.5rem;
-    width: 280px;
-    box-shadow: 0 0 8px #d32f2faa;
-    transition: transform 0.3s;
+  .hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(191,54,12,0.6);
   }
-  .feature:hover {
-    transform: translateY(-8px);
-  }
-  .feature h3 {
-    margin-top: 0;
-    color: #ff6f61;
+  .hero h2 {
+    font-size: 2rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 0.8rem;
+  }
+  .section {
+    background: #311b0b;
+    margin-top: 3rem;
+    padding: 1.8rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+  }
+  .section h3 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #ff8a50;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .section p, .section ul {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  .section ul {
+    padding-left: 1.4rem;
+  }
+  .section ul li {
+    margin-bottom: 0.5rem;
   }
   footer {
-    background: #d32f2f;
-    color: #f3f3f3;
+    background: #4e342e;
+    color: #cfcfcf;
     text-align: center;
-    padding: 1rem 0.5rem;
+    padding: 1rem 1rem;
     font-size: 0.9rem;
-    box-shadow: inset 0 3px 8px rgba(0,0,0,0.7);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.7);
   }
-  .hero-image {
-    display: block;
-    max-width: 100%;
-    border-radius: 15px;
-    margin: 2rem auto 3rem auto;
-    box-shadow: 0 0 16px #d32f2faa;
-  }
-  @media (max-width: 640px) {
-    .features {
-      flex-direction: column;
-      align-items: center;
+  @media (min-width: 640px) {
+    .hero {
+      flex-direction: row;
+      justify-content: center;
+      gap: 3rem;
     }
-    .feature {
-      width: 90%;
+    .hero h2 {
+      max-width: 480px;
+      text-align: left;
     }
   }
 </style>
 </head>
 <body>
-<header>Боулинг-клуб «StrikeZone»</header>
+<header>
+  <h1>Боулинг-Клуб "Страйк"</h1>
+</header>
+<nav>
+  <a href="#about">О нас</a>
+  <a href="#prices">Цены и услуги</a>
+  <a href="#booking">Бронирование</a>
+  <a href="#contacts">Контакты</a>
+</nav>
 <main>
-  <h1>Добро пожаловать в наш боулинг!</h1>
-  <img class="hero-image" src="https://images.unsplash.com/photo-1557793756-d1c13e9f309e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Игроки в боулинг" />
-  <p>Ищете место для отдыха с друзьями или семьей? Наш боулинг-клуб – это яркие эмоции, уютная атмосфера и отличный сервис. Присоединяйтесь к нам и получите незабываемые впечатления!</p>
-  <section class="features">
-    <article class="feature">
-      <h3>Современные дорожки</h3>
-      <p>У нас 12 высококлассных игровых дорожек с автоматическим подсчетом очков и современным освещением для комфортной игры.</p>
-    </article>
-    <article class="feature">
-      <h3>Аренда и обучение</h3>
-      <p>Вы новичок? Мы предоставляем аренду оборудования и профессиональных тренеров для быстрого освоения техники боулинга.</p>
-    </article>
-    <article class="feature">
-      <h3>Бар и кухня</h3>
-      <p>Свежие закуски, прохладительные напитки и ароматный кофе – все для вашего отдыха после игры.</p>
-    </article>
-    <article class="feature">
-      <h3>Мероприятия и турниры</h3>
-      <p>Регулярные турниры, вечеринки и корпоративные мероприятия – отличный способ провести время весело и с азартом.</p>
-    </article>
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1514361892638-12865fca9c11?auto=format&fit=crop&w=800&q=80" alt="Боулинг" loading="lazy">
+    <h2>Веселые игры и уютная атмосфера для всей семьи и компании друзей!</h2>
   </section>
-  <h2>Контакты</h2>
-  <p>Адрес: г. Москва, ул. Клубная, 5<br />Телефон: +7 (495) 123-45-67<br />Email: info@strikezone.ru</p>
+  <section id="about" class="section">
+    <h3>О нас</h3>
+    <p>Боулинг-Клуб "Страйк" — это современное пространство для отдыха, развлечений и соревнований. У нас 12 профессиональных дорожек, современное оборудование и приветливый персонал, который сделает ваш день незабываемым.</p>
+  </section>
+  <section id="prices" class="section">
+    <h3>Цены и услуги</h3>
+    <ul>
+      <li>Игра на дорожках — от 400 ₽ за час</li>
+      <li>Прокат обуви — 150 ₽</li>
+      <li>Детские скидки — 30% на все услуги</li>
+      <li>Аренда зала для праздников и мероприятий</li>
+      <li>Бар с напитками и снэками</li>
+    </ul>
+  </section>
+  <section id="booking" class="section">
+    <h3>Бронирование</h3>
+    <p>Забронируйте дорожки заранее, чтобы не ждать! Позвоните нам или заполните форму на сайте.</p>
+    <form style="max-width:400px; display:flex; flex-direction:column; gap:0.8rem; color:#121212;" action="#" method="post" onsubmit="alert('Спасибо за бронирование! Наш менеджер свяжется с вами.'); return false;">
+      <label for="name">Ваше имя</label>
+      <input type="text" id="name" name="name" required placeholder="Иван Иванов" style="padding:0.6rem; border-radius:4px; border:1px solid #ccc; font-size:1rem;">
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 999-99-99" pattern="\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}" style="padding:0.6rem; border-radius:4px; border:1px solid #ccc; font-size:1rem;">
+      <label for="date">Дата и время</label>
+      <input type="datetime-local" id="date" name="date" required style="padding:0.6rem; border-radius:4px; border:1px solid #ccc; font-size:1rem;">
+      <button type="submit" style="padding:0.8rem; background:#bf360c; border:none; border-radius:4px; color:#fff; cursor:pointer; font-weight:700; font-size:1rem; transition:background 0.3s ease;">Забронировать</button>
+    </form>
+  </section>
+  <section id="contacts" class="section">
+    <h3>Контакты</h3>
+    <p>Адрес: г. Москва, ул. Боулинговая, 15</p>
+    <p>Телефон: +7 (495) 123-45-67</p>
+    <p>Email: info@strikebowling.ru</p>
+    <p>Мы в социальных сетях:
+      <a href="https://vk.com" target="_blank" rel="noopener" style="color:#ffcc80; text-decoration:none;">VK</a>,
+      <a href="https://instagram.com" target="_blank" rel="noopener" style="color:#ffcc80; text-decoration:none;">Instagram</a>,
+      <a href="https://facebook.com" target="_blank" rel="noopener" style="color:#ffcc80; text-decoration:none;">Facebook</a>
+    </p>
+  </section>
 </main>
 <footer>
-  © 2024 Боулинг-клуб «StrikeZone». Все права защищены.
+  © 2024 Боулинг-Клуб "Страйк". Все права защищены.
 </footer>
 </body>
 </html>
